@@ -1,0 +1,177 @@
+/* =======================================
+   STEVEN NOYNAY FILMS — VIDEO VAULT
+======================================= */
+
+/* ---- PAGE STRUCTURE ---- */
+.video-vault-section{
+    padding:120px 0 100px;
+    background:var(--bg);
+    min-height:100vh;
+}
+
+.vault-page-header{
+    margin-bottom:52px;
+}
+
+.vault-intro{
+    color:var(--text);
+    font-size:.88rem;
+    margin-top:12px;
+    line-height:1.7;
+}
+
+/* ---- MAIN PLAYER ---- */
+.main-player-container{
+    width:100%;
+    background:#000;
+    border:1px solid var(--border);
+    border-radius:14px;
+    margin-bottom:32px;
+    aspect-ratio:16/9;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.6);
+}
+
+.main-player-container video{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+    background:#000;
+}
+
+/* ---- VIDEO META ---- */
+.video-meta-detail{
+    margin-bottom:64px;
+    padding-bottom:36px;
+    border-bottom:1px solid var(--border);
+}
+
+.video-meta-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(1.8rem,3vw,2.6rem);
+    color:var(--white);
+    font-weight:300;
+    margin:10px 0 12px;
+    line-height:1.1;
+}
+
+#activeDescription{
+    color:var(--text2);
+    max-width:680px;
+    font-size:.9rem;
+    line-height:1.8;
+}
+
+/* ---- ARCHIVE GRID ---- */
+.works-grid-archive{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-top:20px;
+}
+
+/* ---- ARCHIVE CARD ---- */
+.archive-card{
+    background:var(--bg2);
+    border:1px solid var(--border);
+    border-radius:12px;
+    cursor:pointer;
+    overflow:hidden;
+    transition:border-color .35s ease, transform .35s ease, box-shadow .35s ease;
+}
+
+.archive-card:hover{
+    border-color:var(--gold-line);
+    transform:translateY(-5px);
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+.archive-card.active-card{
+    border-color:var(--gold);
+    box-shadow:0 0 0 1px var(--gold), 0 20px 50px rgba(201,168,76,.15);
+}
+
+/* ---- THUMBNAIL ---- */
+.archive-thumb-wrap{
+    width:100%;
+    aspect-ratio:16/9;
+    background:#0a0a0a;
+    position:relative;
+    overflow:hidden;
+}
+
+.archive-thumb-wrap img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.75;
+    transition:opacity .4s ease, transform .6s ease;
+    display:block;
+}
+
+.archive-card:hover .archive-thumb-wrap img{
+    opacity:1;
+    transform:scale(1.04);
+}
+
+/* Play icon overlay */
+.thumb-play{
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    width:44px; height:44px;
+    border-radius:50%;
+    background:rgba(201,168,76,.85);
+    color:#000;
+    display:flex; align-items:center; justify-content:center;
+    font-size:.9rem;
+    opacity:0;
+    transition:opacity .3s ease, transform .3s ease;
+    pointer-events:none;
+}
+
+.archive-card:hover .thumb-play{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1.08);
+}
+
+/* ---- CARD META ---- */
+.archive-meta{
+    padding:18px 20px 20px;
+}
+
+.card-tag{
+    font-size:.62rem;
+    color:var(--text);
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:6px;
+}
+
+.card-tag.gold-tag{
+    color:var(--gold);
+}
+
+.archive-meta h4{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.15rem;
+    color:var(--white);
+    font-weight:400;
+    line-height:1.2;
+}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:900px){
+    .works-grid-archive{ grid-template-columns:1fr 1fr; }
+    .video-vault-section{ padding:100px 0 80px; }
+}
+
+@media(max-width:600px){
+    .works-grid-archive{ grid-template-columns:1fr; }
+    .video-meta-title{ font-size:1.6rem; }
+    .main-player-container{ border-radius:10px; }
+    .video-vault-section{ padding:90px 0 70px; }
+}
