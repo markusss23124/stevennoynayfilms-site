@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stevennoynayfilms.vercel.app/sitemap.xml
+Sitemap: https://stevennoynayfilms.netlify.app/sitemap.xml
